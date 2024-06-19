@@ -7,16 +7,16 @@ Feature: Bank Login Page Feature
 
     Scenario: Verify Forget Login Info link
       Given user is on the login page
-      Then "Forgot login info?" link should be displayed
+      Then Forgot login info? link should be displayed
 
       Scenario: Verify Register Link
         Given user is on the login page
-        Then "Register" link should be displayed
+        Then Register link should be displayed
 
   Scenario: Verify User is able to login with valid credentials
     Given user is on the login page
-    When user enters username as "test"
+    When user enters username as "AutomationTest"
     And user enters password as "test123"
     And user clicks on login button
     Then user gets the title of the page
-    And page title should be "ParaBank | Accounts Overview"
+    And title of page should be "ParaBank | Accounts Overview"
