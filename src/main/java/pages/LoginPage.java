@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
 
     private final WebDriver driver;
-    public HomePage homePage;
 
     private By userName = By.name("username");
     private By passWord = By.xpath("//*[@name='password']");
@@ -42,6 +41,14 @@ public class LoginPage {
 
     public void clickBtn() {
         driver.findElement(loginBtn).click();
+    }
+
+    public AccountServicePage doLogin(String username, String password){
+        driver.findElement(userName).sendKeys(username);
+        driver.findElement(passWord).sendKeys(password);
+        driver.findElement(loginBtn).click();
+        return new AccountServicePage(driver);
+
     }
 
 }
