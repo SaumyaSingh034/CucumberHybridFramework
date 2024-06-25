@@ -7,11 +7,11 @@ public class LoginPage {
 
     private final WebDriver driver;
 
-    private By userName = By.name("username");
-    private By passWord = By.xpath("//*[@name='password']");
-    private By loginBtn = By.xpath("//input[@value='Log In']");
-    private By forgetpasswordLink = By.xpath("//a[contains(text(),'Forgot login info?')]");
-    private By registerlink = By.xpath("//a[contains(text(),'Register')]");
+    private By userName = By.id("user-name");
+    private By passWord = By.id("password");
+    private By loginBtn = By.xpath("//input[@id='login-button']");
+//    private By forgetpasswordLink = By.xpath("//a[contains(text(),'Forgot login info?')]");
+//    private By registerlink = By.xpath("//a[contains(text(),'Register')]");
 
 
 
@@ -23,12 +23,12 @@ public class LoginPage {
         return driver.getTitle();
     }
 
-    public boolean clickOnForgetLoginInfo() {
-        return driver.findElement(forgetpasswordLink).isEnabled();
-    }
-    public boolean clickOnRegisterLink(){
-        return driver.findElement(registerlink).isEnabled();
-    }
+//    public boolean clickOnForgetLoginInfo() {
+//        return driver.findElement(forgetpasswordLink).isEnabled();
+//    }
+//    public boolean clickOnRegisterLink(){
+//        return driver.findElement(registerlink).isEnabled();
+//    }
 
     public void sendUserName(String username) {
         driver.findElement(userName).sendKeys(username);

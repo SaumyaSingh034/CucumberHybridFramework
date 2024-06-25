@@ -43,13 +43,13 @@ public class BankLoginPageStepDef {
     }
 
 
-    @Then("Forgot login info? link should be displayed")
-    public void forgotLoginInfoLinkShouldBeDisplayed() {
-        Assert.assertTrue("Forget Login Info Link is not enabled/Displayed", loginPageOR.clickOnForgetLoginInfo());
-    }
-
-    @Then("Register link should be displayed")
-    public void registerLinkShouldBeDisplayed() {
-        Assert.assertTrue("Register Link is not enabled/Displayed", loginPageOR.clickOnRegisterLink());
-    }
+//    @Then("Forgot login info? link should be displayed")
+//    public void forgotLoginInfoLinkShouldBeDisplayed() {
+//        Assert.assertTrue("Forget Login Info Link is not enabled/Displayed", loginPageOR.clickOnForgetLoginInfo());
+//    }
+//
+//    @Then("Register link should be displayed")
+//    public void registerLinkShouldBeDisplayed() {
+//        Assert.assertTrue("Register Link is not enabled/Displayed", loginPageOR.clickOnRegisterLink());
+//    }
 }
