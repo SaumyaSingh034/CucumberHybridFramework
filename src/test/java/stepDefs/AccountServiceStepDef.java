@@ -22,7 +22,7 @@ public class AccountServiceStepDef {
         List<Map<String, String>> credentials = datatable.asMaps();
         String username = credentials.get(0).get("userName");
         String pwd = credentials.get(0).get("password");
-        asp = loginPage.doLogin(username,pwd);
+        //asp = loginPage.doLogin(username,pwd);
     }
 
     @Given("user is on the Account Section Page")

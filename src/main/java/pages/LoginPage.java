@@ -43,11 +43,11 @@ public class LoginPage {
         driver.findElement(loginBtn).click();
     }
 
-    public AccountServicePage doLogin(String username, String password){
+    public ProductsPage doLogin(String username, String password){
         driver.findElement(userName).sendKeys(username);
         driver.findElement(passWord).sendKeys(password);
         driver.findElement(loginBtn).click();
-        return new AccountServicePage(driver);
+        return new ProductsPage(driver);
 
     }
 

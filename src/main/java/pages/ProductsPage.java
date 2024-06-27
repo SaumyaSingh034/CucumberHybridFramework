@@ -1,5 +1,6 @@
 package pages;
 
+import factory.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import java.util.List;
 public class ProductsPage {
 
     private WebDriver driver;
+
     private By productsList = By.xpath("//div[@class='inventory_item_description']");
     private By addToCart = By.xpath("//*[contains(text(),'Add to cart')]");
 
