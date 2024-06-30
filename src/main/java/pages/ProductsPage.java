@@ -52,4 +52,8 @@ public class ProductsPage {
         }
     }
 
+    public void addToCart(){
+        driver.findElement(addToCart).click();
+    }
+
 }

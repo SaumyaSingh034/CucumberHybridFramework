@@ -60,12 +60,13 @@ public class ProductsStepDef {
     }
 
     @And("user click on {string} product")
-    public void userClickOnProduct(String arg0) {
-
+    public void userClickOnProduct(String product) {
+        pg.clickOnSpecificProduct(product);
     }
 
     @And("user click on Add to cart button")
     public void userClickOnAddToCartButton() {
+        pg.addToCart();
 
     }
 
