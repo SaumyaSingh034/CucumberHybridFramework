@@ -10,6 +10,7 @@ import pages.AccountServicePage;
 import pages.LoginPage;
 import pages.ProductsPage;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,7 @@ public class ProductsStepDef {
     private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
     private ProductsPage pg;
     int countProductList;
+    List<String> expectedList = new ArrayList<>();
 
 
 
@@ -42,13 +44,12 @@ public class ProductsStepDef {
 
     @When("user gets the list of all products")
     public void userGetsTheListOfAllProducts() {
-
+    expectedList = pg.productListData();
     }
 
     @Then("product list should contain")
     public void productListShouldContain(DataTable dataTable) {
-        List<String> expectedList = dataTable.asList();
-        List<String> actualList = pg.productListData();
+        List<String> actualList = dataTable.asList();
         Assert.assertTrue("List is not same : ", actualList.equals(expectedList));
 
     }

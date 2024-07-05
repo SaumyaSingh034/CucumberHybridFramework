@@ -1,6 +1,5 @@
 package pages;
 
-import factory.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +11,7 @@ public class ProductsPage {
 
     private WebDriver driver;
 
-    private By productsList = By.xpath("//div[@class='inventory_item_description']");
+    private By productsList = By.xpath("//div[@class='inventory_item_name ']");
     private By addToCart = By.xpath("//*[contains(text(),'Add to cart')]");
 
     private By addToCartToSpecificItem = By.xpath("//div[@class='inventory_item_description']/div[2]/button");
@@ -52,8 +51,9 @@ public class ProductsPage {
         }
     }
 
-    public void addToCart(){
+    public AddToCartPage addToCart(){
         driver.findElement(addToCart).click();
+        return new AddToCartPage();
     }
 
 }
