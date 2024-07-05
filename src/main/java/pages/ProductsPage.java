@@ -53,7 +53,7 @@ public class ProductsPage {
 
     public AddToCartPage addToCart(){
         driver.findElement(addToCart).click();
-        return new AddToCartPage();
+        return new AddToCartPage(driver);
     }
 
 }

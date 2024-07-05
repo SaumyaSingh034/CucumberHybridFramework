@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.AccountServicePage;
+import pages.AddToCartPage;
 import pages.LoginPage;
 import pages.ProductsPage;
 
@@ -18,6 +19,7 @@ public class ProductsStepDef {
 
     private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
     private ProductsPage pg;
+    private AddToCartPage cart;
     int countProductList;
     List<String> expectedList = new ArrayList<>();
 
@@ -67,12 +69,18 @@ public class ProductsStepDef {
 
     @And("user click on Add to cart button")
     public void userClickOnAddToCartButton() {
-        pg.addToCart();
+        cart = pg.addToCart();
 
     }
 
     @Then("user verify the product should be available to cart")
     public void userVerifyTheProductShouldBeAvailableToCart() {
+       System.out.println( cart.getProductQuantity());
+       System.out.println( cart.getProductName());
+       Assert.assertTrue("Quantity is not same ",   cart.getProductQuantity().equals("1"));
+       Assert.assertTrue("Quantity is not same ",   cart.getProductName().equals("Sauce Labs Onesie"));
+
+
     }
 
     @When("user click the Menu btn")
