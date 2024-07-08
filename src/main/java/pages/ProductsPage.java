@@ -44,7 +44,8 @@ public class ProductsPage {
     }
 
     public void clickOnSpecificProduct( String productName){
-        for(WebElement e : driver.findElements(productsList)){
+        List<WebElement> prodList = driver.findElements(productsList);
+        for(WebElement e : prodList){
             if(productName.equalsIgnoreCase(e.getText())){
                 e.findElement(addToCartToSpecificItem).click();
             }
