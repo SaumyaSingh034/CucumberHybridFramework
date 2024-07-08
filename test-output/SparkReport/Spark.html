@@ -1,0 +1,947 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extent</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c952cc003431b643d7a73337421ff42b75bac784/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 8, 2024 04:54:00 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 8, 2024 04:54:00 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 8, 2024 04:54:24 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>1</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>2</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='33%'>
+<b>1</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='66%'><b>2</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='50%'><b>4</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='50%'><b>4</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='87%'><b>36</b> steps passed</small></div>
+<div>
+<small data-tooltip='9%'><b>4</b> steps failed,
+<b>1</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Account Service Feature":6.722,"Bank Login Page Feature":4.988,"Products List Feature":11.961
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>AppName</td>
+<td>AutomationPractice</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Saumya</td>
+</tr>
+<tr>
+<td>build</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Mac</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 1,
+failParent: 2,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 4,
+failChild: 4,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 36,
+failGrandChild: 4,
+warningGrandChild: 0,
+skipGrandChild: 1,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Account Service Feature</p>
+            <p class="text-sm">
+              <span>16:54:00 pm</span> / <span>00:00:06:722</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Account Service Feature</h5>
+<span class='badge badge-success'>07.08.2024 16:54:00</span>
+<span class='badge badge-danger'>07.08.2024 16:54:07</span>
+<span class='badge badge-default'>00:00:06:722</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Verify user is on the Account Service Page</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.AccountServiceStepDef.userWillLoginToTheBankPortalUsingBelowCredentials(io.cucumber.datatable.DataTable)">
+                <span>Given user will login to the bank portal using below credentials</span>
+      <div><table class='markup-table table '><tr><td>userName</td><td>password</td></tr><tr><td>AutomationTest</td><td>Test123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.AccountServiceStepDef.userIsOnTheAccountSectionPage()">
+                <span>Given user is on the Account Section Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.userGetsTheTitleOfThePage()">
+                <span>When user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefs.BankLoginPageStepDef.titleOfPageShouldBe(java.lang.String)">
+                <span>Then title of page should be "ParaBank | Accounts Overview"</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: Title of the Page is not same
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at stepDefs.BankLoginPageStepDef.titleOfPageShouldBe(BankLoginPageStepDef.java:42)
+	at ✽.title of page should be "ParaBank | Accounts Overview"(file:///Users/saumya.singh/IdeaProjects/CucumberPOMSeries/src/resources/feature/AccountService.feature:11)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>appHooks.Hooks.failScenarioScreenshot(io.cucumber.java.Scenario)</span>
+      <div>Verify_user_is_on_the_Account_Service_Page
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded1.png' src="../embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="11"><span class="badge log fail-bg mr-2">Fail</span>Verify Account Services Section</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.AccountServiceStepDef.userWillLoginToTheBankPortalUsingBelowCredentials(io.cucumber.datatable.DataTable)">
+                <span>Given user will login to the bank portal using below credentials</span>
+      <div><table class='markup-table table '><tr><td>userName</td><td>password</td></tr><tr><td>AutomationTest</td><td>Test123</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.AccountServiceStepDef.userIsOnTheAccountSectionPage()">
+                <span>Given user is on the Account Section Page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefs.AccountServiceStepDef.userGetsTheAccountServices(io.cucumber.datatable.DataTable)">
+                <span>Then user gets the Account Services</span>
+      <div><table class='markup-table table '><tr><td>Open New Account</td></tr><tr><td>Accounts Overview</td></tr><tr><td>Transfer Funds</td></tr><tr><td>Bill Pay</td></tr><tr><td>Find Transactions</td></tr><tr><td>Update Contact Info</td></tr><tr><td>Request Loan</td></tr><tr><td>Log Out</td></tr></table>
+      </div>
+      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "pages.AccountServicePage.validateAccountService()" because "this.asp" is null
+	at stepDefs.AccountServiceStepDef.userGetsTheAccountServices(AccountServiceStepDef.java:36)
+	at ✽.user gets the Account Services(file:///Users/saumya.singh/IdeaProjects/CucumberPOMSeries/src/resources/feature/AccountService.feature:15)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepDefs.AccountServiceStepDef.userGetsTheCountOfAccountServicesAs(int)">
+                <span>And user gets the count of Account Services as 8</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>appHooks.Hooks.failScenarioScreenshot(io.cucumber.java.Scenario)</span>
+      <div>Verify_Account_Services_Section
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded2.png' src="../embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Bank Login Page Feature</p>
+            <p class="text-sm">
+              <span>16:54:07 pm</span> / <span>00:00:04:988</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Bank Login Page Feature</h5>
+<span class='badge badge-success'>07.08.2024 16:54:07</span>
+<span class='badge badge-danger'>07.08.2024 16:54:12</span>
+<span class='badge badge-default'>00:00:04:988</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Verify Login Page title</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.userIsOnTheLoginPage()">
+                <span>Given user is on the login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.userGetsTheTitleOfThePage()">
+                <span>When user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.titleOfPageShouldBe(java.lang.String)">
+                <span>Then title of page should be "Swag Labs"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="29"><span class="badge log pass-bg mr-2">Pass</span>Verify User is able to login with valid credentials</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.userIsOnTheLoginPage()">
+                <span>Given user is on the login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.userEntersUsernameAs(java.lang.String)">
+                <span>When user enters username as "standard_user"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.userEntersPasswordAs(java.lang.String)">
+                <span>And user enters password as "secret_sauce"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.userClicksOnLoginButton()">
+                <span>And user clicks on login button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.userGetsTheTitleOfThePage()">
+                <span>Then user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.BankLoginPageStepDef.titleOfPageShouldBe(java.lang.String)">
+                <span>And title of page should be "Swag Labs"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="40"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Products List Feature</p>
+            <p class="text-sm">
+              <span>16:54:12 pm</span> / <span>00:00:11:961</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Products List Feature</h5>
+<span class='badge badge-success'>07.08.2024 16:54:12</span>
+<span class='badge badge-danger'>07.08.2024 16:54:24</span>
+<span class='badge badge-default'>00:00:11:961</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="41"><span class="badge log pass-bg mr-2">Pass</span>User will get the list of all products</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userWillLoginToTheSwagLabsLoginPageUsingBelowCredentials(io.cucumber.datatable.DataTable)">
+                <span>Given user will login to the Swag Labs Login Page using below credentials</span>
+      <div><table class='markup-table table '><tr><td>userName</td><td>password</td></tr><tr><td>standard_user</td><td>secret_sauce</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userIsOnTheProductsPage()">
+                <span>Given user is on the Products page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userGetsTheCountOfAllTheProducts()">
+                <span>When user gets the count of all the products</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.theCountOfProductsShouldBe(int)">
+                <span>Then the count of products should be 6</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>User gets the list of all products</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userWillLoginToTheSwagLabsLoginPageUsingBelowCredentials(io.cucumber.datatable.DataTable)">
+                <span>Given user will login to the Swag Labs Login Page using below credentials</span>
+      <div><table class='markup-table table '><tr><td>userName</td><td>password</td></tr><tr><td>standard_user</td><td>secret_sauce</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userIsOnTheProductsPage()">
+                <span>Given user is on the Products page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userGetsTheListOfAllProducts()">
+                <span>When user gets the list of all products</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.productListShouldContain(io.cucumber.datatable.DataTable)">
+                <span>Then product list should contain</span>
+      <div><table class='markup-table table '><tr><td>Sauce Labs Backpack</td></tr><tr><td>Sauce Labs Bike Light</td></tr><tr><td>Sauce Labs Bolt T-Shirt</td></tr><tr><td>Sauce Labs Fleece Jacket</td></tr><tr><td>Sauce Labs Onesie</td></tr><tr><td>Test.allTheThings() T-Shirt (Red)</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="59"><span class="badge log fail-bg mr-2">Fail</span>User add product into the cart</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userWillLoginToTheSwagLabsLoginPageUsingBelowCredentials(io.cucumber.datatable.DataTable)">
+                <span>Given user will login to the Swag Labs Login Page using below credentials</span>
+      <div><table class='markup-table table '><tr><td>userName</td><td>password</td></tr><tr><td>standard_user</td><td>secret_sauce</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userIsOnTheProductsPage()">
+                <span>Given user is on the Products page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userGetsTheListOfAllProducts()">
+                <span>When user gets the list of all products</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userClickOnProduct(java.lang.String)">
+                <span>And user click on "Sauce Labs Onesie" product</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userClickOnAddToCartButton()">
+                <span>And user click on Add to cart button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefs.ProductsStepDef.userVerifyTheProductShouldBeAvailableToCart()">
+                <span>Then user verify the product should be available to cart</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='cart_quantity']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'IN-IT11664', ip: '192.168.1.14', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: /var/folders/jk/69d4wg6x7f7...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54425}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3a6ff6d52b028c7dc8d8240f60fc2ce
+*** Element info: {Using=xpath, value=//div[@class='cart_quantity']}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at pages.AddToCartPage.getProductQuantity(AddToCartPage.java:17)
+	at stepDefs.ProductsStepDef.userVerifyTheProductShouldBeAvailableToCart(ProductsStepDef.java:78)
+	at ✽.user verify the product should be available to cart(file:///Users/saumya.singh/IdeaProjects/CucumberPOMSeries/src/resources/feature/Products.feature:29)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>appHooks.Hooks.failScenarioScreenshot(io.cucumber.java.Scenario)</span>
+      <div>User_add_product_into_the_cart
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded3.png' src="../embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="70"><span class="badge log fail-bg mr-2">Fail</span>User verify products Menu button</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userWillLoginToTheSwagLabsLoginPageUsingBelowCredentials(io.cucumber.datatable.DataTable)">
+                <span>Given user will login to the Swag Labs Login Page using below credentials</span>
+      <div><table class='markup-table table '><tr><td>userName</td><td>password</td></tr><tr><td>standard_user</td><td>secret_sauce</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userIsOnTheProductsPage()">
+                <span>Given user is on the Products page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userClickTheMenuBtn()">
+                <span>When user click the Menu btn</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.userGetsTheListOfMenuItems()">
+                <span>And user gets the list of menu items</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefs.ProductsStepDef.countOfMenuItemsShouldBe(int)">
+                <span>Then count of menu items should be 4</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="stepDefs.ProductsStepDef.menuProductListShouldBe()">
+                <span>And menu product list should be</span>
+      <div><table class='markup-table table '><tr><td>All Items</td></tr><tr><td>About</td></tr><tr><td>Logout</td></tr><tr><td>Reset App State</td></tr></table>
+      </div>
+      <div>
+        <textarea disabled class="code-block">io.cucumber.core.exception.CucumberException: Step [menu product list should be] is defined with 0 parameters at 'stepDefs.ProductsStepDef.menuProductListShouldBe()'.
+However, the gherkin step has 1 arguments:
+ * Table:
+      | All Items       |
+      | About           |
+      | Logout          |
+      | Reset App State |
+
+Step text: menu product list should be
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.arityMismatch(PickleStepDefinitionMatch.java:83)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:42)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.testng.junit.JUnit4TestRunner.start(JUnit4TestRunner.java:82)
+	at org.testng.junit.JUnit4TestRunner.run(JUnit4TestRunner.java:70)
+	at org.testng.TestRunner$1.run(TestRunner.java:570)
+	at org.testng.TestRunner.runJUnitWorkers(TestRunner.java:717)
+	at org.testng.TestRunner.privateRunJUnit(TestRunner.java:601)
+	at org.testng.TestRunner.run(TestRunner.java:502)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:112)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>appHooks.Hooks.failScenarioScreenshot(io.cucumber.java.Scenario)</span>
+      <div>User_verify_products_Menu_button
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../embedded4.png' src="../embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:54:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='67'>Then user verify the product should be available to cart</a>
+<div class="">
+<span class="badge badge-default">Products List Feature.User add product into the cart.Then user verify the product should be available to cart</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">io.cucumber.core.exception.CucumberException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>io.cucumber.core.exception.CucumberException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:54:23 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='78'>And menu product list should be</a>
+<div class="">
+<span class="badge badge-default">Products List Feature.User verify products Menu button.And menu product list should be</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:54:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='8'>Then title of page should be "ParaBank | Accounts Overview"</a>
+<div class="">
+<span class="badge badge-default">Account Service Feature.Verify user is on the Account Service Page.Then title of page should be "ParaBank | Accounts Overview"</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.NullPointerException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.NullPointerException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:54:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>Then user gets the Account Services</a>
+<div class="">
+<span class="badge badge-default">Account Service Feature.Verify Account Services Section.Then user gets the Account Services</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
