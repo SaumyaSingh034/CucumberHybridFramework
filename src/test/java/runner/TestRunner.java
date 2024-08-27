@@ -8,10 +8,12 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/resources/feature"},
         glue = {"stepDefs", "appHooks"},
+        tags = {"~@Sanity"},
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "timeline:test-output-thread/"
         }
+
 )
 
 public class TestRunner {

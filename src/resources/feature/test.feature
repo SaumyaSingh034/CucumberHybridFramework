@@ -1,5 +1,5 @@
 Feature: What is this feature about //Facebook Login Validation
-
+  @Regression @Sanity
   Scenario: login Facebook with valid credentials
     Given User landed on facebook loginPage "https:...."
     When user clicks on Login Icon
